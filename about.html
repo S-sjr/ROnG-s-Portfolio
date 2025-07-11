@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - ROnG</title>
+    <style>
+        /* ========== 全局样式 ========== */
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+            color: #e0e0e0;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('assets/icons/SJR.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 30%;
+            opacity: 0.3;
+            z-index: 0; 
+        }
+        
+        /* ========== 导航栏样式 ========== */
+        .logo-container {
+            position: fixed;
+            left: 3rem;
+            top: 1rem;
+            z-index: 1001;
+        }
+        
+        .logo {
+            font-size: 1.7rem;
+            font-weight: bold;
+            color: #e0e0e0;
+        }
+        
+        .main-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: rgba(0, 0, 0, 0.95);
+            padding: 0 3rem;
+            box-sizing: border-box;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.522);
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin: 0;
+            padding: 0 1rem;
+        }
+        
+        .main-nav a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            padding: 0.1rem;
+            display: inline-block;
+            font-family: 'Arial', 'Helvetica', sans-serif;
+        }
+        
+        .main-nav a:hover {
+            color: #ffffff;
+            transform: scale(1.03);
+            text-shadow: 0 0 8px rgba(255,255,255,0.3);
+        }
+        .bio-panel {
+            position: relative;
+            z-index: 3;
+            background-color: transparent;
+        }
+        .bio-panel {
+            max-width: 1200px;
+            margin: 100px auto;
+            padding: 60px;
+        }
+        .bio-panel h2 {
+            font-size: 2rem;
+            margin-bottom: 3px;
+        }
+        .bio-panel p {
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+        .bio-resume {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #333;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #000000;
+            color: #aaa;
+            position: relative;
+            z-index: 2;
+            margin-top: auto; /* 自动填充剩余空间 */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <span class="logo">ROnG's</span>
+        </div>
+        <nav class="main-nav">
+            <div class="nav-box">
+                <ul class="nav-links">
+                    <li><a href="index.html">RonG's Works</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="bio-panel">
+        <h2>ROnG</h2>
+        <p>Jiarong Sun (b.2003, Shanxi, China) is a multimedia art designer with a Bachelor's degree in Digital Media Arts from Xi'an Jiaotong-Liverpool University. Sun's creative practice spans graphic design, 3D modeling & animation, video post-production, and interactive media. He specializes in merging artistic storytelling with cutting-edge tools such as Unreal Engine 5, TouchDesigner, and the Adobe Creative Suite to create immersive digital experiences.</p>
+        
+        <p>Throughout the academic journey, Sun has led and contributed to various interdisciplinary projects, including serving as a student representative and designer for the MEGA International Creative Media Festival. Sun also actively participated in organizing university-wide career fairs and design exhibitions as the Deputy Director of the SCDA publicity department.</p>
+        
+        <p>With a strong foundation in both design and technology, Sun sees multimedia as a powerful medium that connects people, ideas, and digital systems. As he embarks on further postgraduate studies in Animation and Visual Effects in Australia, the goal is to push creative boundaries and continue exploring innovative visual narratives.</p>
+        
+        <a href="assets/documents/中文简历_孙家荣.pdf" class="bio-resume" download style="padding: 0.35rem 1rem; margin: 0 0.5rem;">中文简历</a>
+        <a href="assets/documents/English Resume_Jiarong Sun.pdf" class="bio-resume" download style="padding: 0.5rem 1rem; margin: 0 0.5rem;">English Resume</a>
+        
+        <div class="exhibition-section">
+            <h3>EXHIBITIONS</h3>
+            <p>VIRTUVERSE BOUNDLESS - XJTLU-AFCT, Suzhou (2025)</p>
+            <p>ECOSYSTEM - XJTLU-AFCT, Suzhou (2024)</p>
+            <p>DIVERSITY - XJTLU-AFCT, Suzhou (2023)</p>
+            <h3>AWARDS</h3>
+            <p>2025 XJTLU-AFCT Digital Media Arts Graduation Exihibition - Creative Excellent Award</p>
+            <p>2025 XJTLU-AFCT Digital Media Arts Graduation Exihibition - Orgnazational Excellenct Award</p>
+            <p>2024 XJTLU-AFCT Digtal Media Arts Exhibition - The Best Major Project Poster Award</p>
+        </div>
+    </div>
+    <footer>
+        <p>© 2025 ROnG's Portfolio</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <style>
+    
+  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disinformation Overload</title>
+    <style>
+        /* ========== 全局样式 ========== */
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+            color: #e0e0e0;
+        }
+        
+        /* ========== 导航栏样式 ========== */
+        .logo-container {
+            position: fixed;
+            left: 3rem;
+            top: 1rem;
+            z-index: 1001;
+        }
+        
+        .logo {
+            font-size: 1.7rem;
+            font-weight: bold;
+            color: #e0e0e0;
+        }
+        
+        .main-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: rgba(0, 0, 0, 0.95);
+            padding: 0 3rem;
+            box-sizing: border-box;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.522);
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin: 0;
+            padding: 0 1rem;
+        }
+        
+        .main-nav a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            padding: 0;
+            display: inline-block;
+            font-family: 'Arial', 'Helvetica', sans-serif;
+        }
+        
+        .main-nav a:hover {
+            color: #ffffff;
+            transform: scale(1.03);
+            text-shadow: 0 0 8px rgba(255,255,255,0.3);
+        }
+        
+        /* 项目信息框样式 */
+        .project-info-box {
+            width: 100%;
+            min-height: 100vh;
+            padding: 180px 30px 30px;
+            background: rgba(0, 0, 0, 0.7);
+            text-align: center;
+            font-family: 'Arial', 'Helvetica', sans-serif;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .project-info-box h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #ffffff;
+            font-weight: 100;
+        }
+        
+        .project-meta {
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .project-meta p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 10px;
+            color: #e0e0e0;
+            font-weight: normal;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #000000;
+            color: #aaa;
+            position: relative;
+            z-index: 2;
+            margin-top: auto; /* 自动填充剩余空间 */
+        }
+    </style>
+</head>
+<body>
+  <!-- 加载动画 -->
+  
+    <header>
+        <div class="logo-container">
+            <span class="logo">ROnG's</span>
+        </div>
+        <nav class="main-nav">
+            <div class="nav-box">
+                <ul class="nav-links">
+                    <li><a href="index.html">RonG's Works</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="project-info-box">
+        <h1>Disinformation Overload</h1>
+        <div class="project-meta">
+             <p>'Disinformation Overload' is an interactive art installation that explores the phenomenon of information overload in the digital age. Using TouchDesigner for visual development and Kinect for motion sensing, the installation will presents a myriad of 3D model composed of thousands of dynamic particles according to the audience's movements.</p>
+             <p>-</p>
+             <p>Interaction Multimedia Installation</p>
+             <p>-2025/05-</p>
+             <p>Medium : TouchDesigner, Kinect V2</p>
+             <p>Recommend Resolution : 3840 x 2160 px</p>
+             <p>-</p>
+         </div>
+    </div>
+    
+    <div class="project-video">
+  <div class="video-container">
+    <iframe src="https://player.bilibili.com/player.html?bvid=BV1nVuTzFEXb&vd_source=f21f94bb43d428a0498df68bb731fe62" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+  </div>
+  <style>
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 比例 */
+      height: 0;
+      overflow: hidden;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</div>
+    
+    <div class="project-images">
+        <img src="assets/img/6.svg" alt="Project image 6">
+        <img src="assets/img/7.svg" alt="Project image 7">
+        <img src="assets/img/8.svg" alt="Project image 8">
+        <img src="assets/img/9.svg" alt="Project image 9">
+        <img src="assets/img/10.svg" alt="Project image 10">
+        <img src="assets/img/11.svg" alt="Project image 11">
+    </div>
+    
+    <style>
+        .project-video {
+            width: 100%;
+            padding: 2rem 0;
+            position: relative;
+        }
+        
+        .project-video video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+
+        
+        .project-images {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+            padding: 2rem 0;
+        }
+        
+        /* 图片入场动画 */
+        @keyframes slideUp {
+            from { transform: translateY(100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .project-images img {
+            width: 100%;
+            height: auto;
+            opacity: 0;
+            transform: translateY(100px);
+            transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+        }
+        
+        .project-images img.animate {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    </style>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('.project-images img');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            images.forEach(img => {
+                observer.observe(img);
+            });
+        });
+    </script>
+    </style>
+     
+     <footer>
+        <p>© 2025 ROnG's Portfolio</p>
+    </footer>
+  });
+  
+  // 视频播放结束时自动重置按钮状态
+  video.addEventListener('ended', function() {
+    playButton.checked = false;
+  });
+  // 鼠标移动时显示按钮，不移动时隐藏
+  let mouseMoveTimer;
+  const container = document.querySelector('.container');
+  
+  document.addEventListener('mousemove', () => {
+    container.style.opacity = '1';
+    clearTimeout(mouseMoveTimer);
+    mouseMoveTimer = setTimeout(() => {
+      container.style.opacity = '0';
+    }, 1000); // 2秒无操作后隐藏
+  });
+</script>
+  <script>
+    
+  </script>
+</body>
+</html>

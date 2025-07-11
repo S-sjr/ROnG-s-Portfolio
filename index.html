@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <!-- 基础元数据 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R0nG's Portfolio</title>
+    <style>
+        /* ========== 全局样式 ========== */
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+            color: #e0e0e0;
+        }
+
+/* 跳转链接图标样式 */
+.project-link-icon {
+  position: absolute;
+  bottom: 20px;
+  right: 3%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 60px;
+  z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.889);
+    border-radius: 50%;
+    color: white;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.project-link-icon:hover {
+    background: rgba(0,0,0,0.9);
+    transform: scale(1.1);
+}
+
+        /* ========== 导航栏样式 ========== */
+        .logo-container {
+            position: fixed;
+            left: 3rem;
+            top: 1rem;
+            z-index: 1001;
+        }
+        
+        .logo {
+            font-size: 1.7rem;
+            font-weight: bold;
+            color: #e0e0e0;
+        }
+        
+        .main-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: rgba(0, 0, 0, 0.95);
+            padding: 0 3rem;
+            box-sizing: border-box;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.522);
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        
+        .nav-box {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            height: 100%;
+            padding-right: 2rem;
+        }
+        .main-nav ul {
+            display: flex;
+            justify-content: space-between;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+        .main-nav li {
+            margin: 0 1rem; /* 调整链接间距为1rem */
+        .main-nav .nav-links {
+            display: flex;
+            margin-left: auto;
+            position: relative; /* 允许独立定位 */
+            right: 3rem; /* 向右移动3rem */
+        }/* 右侧链接容器 */
+        }
+        .main-nav li {
+            margin: 0 1rem !important;
+        }
+        .main-nav {
+            padding: 1rem;
+        }
+        .main-nav a {
+            font-size: 0.9rem; /* 缩小文字大小 */
+        }
+        .main-nav li.logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-left: 3rem; /* logo向右移动 */
+        }
+        .main-nav a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            padding: 0;
+            display: inline-block;
+            font-family: 'Arial', 'Helvetica', sans-serif;
+        }
+        .main-nav a:hover {
+            color: #ffffff;
+            transform: scale(1.03);
+            text-shadow: 0 0 8px rgba(255,255,255,0.3);
+        }
+        
+        /* 全局样式 */
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif; /* 使用衬线字体 */
+            margin: 0;
+            padding: 0;
+            background-color: #000000; /* 深色背景 */
+            color: #e0e0e0; /* 浅色文字 */
+        }
+        /* 头部样式 */
+        header {
+            background:#000000; /* 渐变背景 */
+            color: #ffffff;
+            padding: 2rem;
+            text-align: left;
+        }
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            display: inline-block; /* 使transform仅作用于文本 */
+        }
+        h1 span {
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block; /* 确保缩放基于文本 */
+        }
+        h1 span:hover {
+            transform: scale(1.03);
+            text-shadow: 0 0 8px rgba(255,255,255,0.3);
+        }
+        /* 主容器布局 */
+        .container {
+            display: flex; /* 弹性布局 */
+            min-height: calc(100vh - 200px); /* 最小高度为视口高度减去200px */
+        }
+        /* 左侧项目菜单样式 */
+        .project-menu {
+            width: 135px; /* 固定宽度 */
+            padding: 20px;
+            background: #000000; /* 深色背景 */
+            border-right: 1px solid #ffffff73; /* 右侧边框 */
+        }
+        /* 单个项目项样式 */
+        .project-item {
+            margin-bottom: 20px; /* 项目间距 */
+            cursor: pointer; /* 鼠标指针样式 */
+            transition: all 0.3s ease; /* 过渡动画 */
+        }
+        /* 激活状态的项目缩略图样式 */
+        .project-item.active .project-thumbnail {
+             box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.9); /* 白色发光效果 */
+         }
+        .project-item:hover {
+            transform: translateX(5px);
+        }
+        .project-thumbnail {
+            width: 120px;
+            height: 120px;
+            overflow: hidden;
+            border-radius: 8px;
+            border: 2px solid #333;
+        }
+        .project-thumbnail {
+    /* 强制正方形容器 */
+    width: 120px;
+    height: 120px !important;
+    min-width: 120px;
+    min-height: 120px;
+    max-width: 120px;
+    max-height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    overflow: hidden;
+    /* 多重保障正方形 */
+    aspect-ratio: 1/1;
+    box-sizing: border-box;
+    /* SVG图片缩放设置 */
+    svg {
+        width: 45%; /* 适当缩小SVG */
+        height: 45%;
+        object-fit: contain;
+    }
+    /* 普通图片设置 */
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+        }
+        .project-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        /* 右侧内容区域样式 */
+        .project-content {
+    position: relative;
+    /* 原有样式保持不变 */
+            flex: 1; /* 占据剩余空间 */
+            padding: 20px;
+            max-width: calc(100% - 240px); /* 最大宽度减去左侧菜单宽度 */
+            min-height: 830px; /* 增加最小高度 */
+        }
+        .project-content h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: rgb(255, 255, 255);
+        }
+        /* 项目详情默认隐藏 */
+        .project-detail {
+            display: none;
+            background: none;
+        }
+        /* 激活状态的项目详情显示 */
+        .project-detail.active {
+            display: block;
+            position: fixed;
+            top: 70px;
+            left: 185px; /* 留出左侧菜单宽度 */
+            right: 0;
+            bottom: 500px;
+            min-height: 90%;
+            padding: 80px;
+            color: white;
+            overflow-y: auto;
+            /* 背景图片作为边框蒙版 */
+            background: url('assets/img/Train - frame at 0m5s.png') center/cover no-repeat fixed;
+            border: 20px solid rgba(0, 0, 0, 0);
+            box-sizing: border-box;
+            background-clip: padding-box;
+            
+        }
+        
+        /* 确保项目1详情默认有背景 */
+        #project1.active {
+            background: url('assets/img/Train - frame at 0m5s.png') center/cover no-repeat fixed !important;
+        }
+        
+        /* 项目1文字容器样式 */
+        .project-detail .text-container {
+            background: linear-gradient(to right, rgba(0,0,0,0.9), rgba(0, 0, 0, 0.163));
+            padding: 20px;
+            width: 30%;
+            min-width: 300px;
+            max-width: 900px;
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            z-index: 1;
+        }
+        .portfolio-item {
+            background: #1e1e1e;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+            border: 1px solid #333;
+        }
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .portfolio-info {
+            padding: 15px;
+        }
+        
+        /* 页脚样式 */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #000000;
+            color: #aaa;
+            position: relative;
+            z-index: 2;
+            margin-top: auto; /* 自动填充剩余空间 */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <span class="logo">ROnG's</span>
+        </div>
+        <nav class="main-nav">
+            <div class="nav-box">
+                <ul class="nav-links">
+                    <li><a href="index.html">RonG's Works</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <aside class="project-menu">
+            <div class="project-item" data-project="project1">
+                <div class="project-thumbnail" style="display: flex; justify-content: center; align-items: center; height: 150px;">
+                    <img src="assets/img/Disinformation Overload logo.svg" alt="Project 1 Logo" style="max-width: 100%; max-height: 100%;">
+                </div>
+                <h3>Disinformation Overload</h3>
+            </div>
+            
+        </aside>
+        <main class="project-content">
+        <!-- 右下角跳转链接 -->
+        <a href="project_Disinfomation_Overload.html" class="project-link-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+            <div class="project-detail" id="project1">
+                <div class="text-container" style="margin-top: 20px;">
+                    <h2>Disinformation Overload</h2>
+                    <p>This is an immersive visual interactive experience</p>
+                </div>
+            </div>
+            
+        </main>
+    </div>
+
+
+    
+
+
+
+    <footer>
+        <p>© 2025 ROnG's Portfolio</p>
+    </footer>
+    
+    <script>
+        /* ========== 项目导航交互 ========== */
+        // 处理导航链接点击
+        document.querySelectorAll('.main-nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                // 仅对内部锚点链接阻止默认行为
+                if(this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                }
+                // 外部.html文件允许正常跳转
+            });
+        });
+
+        document.querySelectorAll('.project-item').forEach(item => {
+            item.addEventListener('click', () => {
+                // 获取当前点击项目的ID
+                const projectId = item.getAttribute('data-project');
+                
+                // 隐藏所有项目详情
+                document.querySelectorAll('.project-detail').forEach(detail => {
+                    detail.classList.remove('active');
+                    // 移除所有背景图片
+                    detail.style.background = 'none';
+                });
+                
+                // 移除所有项目的激活状态
+                document.querySelectorAll('.project-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // 设置当前项目为激活状态
+                item.classList.add('active');
+                
+                // 显示对应的项目详情
+                const activeDetail = document.getElementById(projectId);
+                activeDetail.classList.add('active');
+                
+                // 仅为项目1添加背景图片
+                if(projectId === 'project1') {
+                    activeDetail.style.background = 'url(assets/img/Train - frame at 0m5s.png) center/cover no-repeat fixed';
+                }
+            });
+        });
+        
+        // 页面加载时自动激活第一个项目
+        window.addEventListener('DOMContentLoaded', () => {
+            const firstProject = document.querySelector('.project-item');
+            if(firstProject) {
+                firstProject.click();
+            }
+        });
+        
+        /* ========== 导航栏交互 ========== */
+        document.querySelectorAll('.main-nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                // 仅对内部锚点链接阻止默认行为
+                if(link.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href').substring(1);
+                    
+                    // 隐藏所有部分
+                    document.querySelectorAll('section').forEach(section => {
+                        section.style.display = 'none';
+                    });
+                    
+                    // 显示目标部分
+                    if(targetId === 'projects') {
+                        document.querySelector('.container').style.display = 'flex';
+                    } else {
+                        document.querySelector('.container').style.display = 'none';
+                        document.getElementById(targetId).style.display = 'block';
+                    }
+                }
+                // 外部.html文件允许正常跳转
+            });
+        });
+        
+        // 默认显示项目
+        document.querySelector('.container').style.display = 'flex';
+    </script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - ROnG</title>
+    <style>
+        /* ========== 全局样式 ========== */
+        /* 控制整个页面的基础样式 */
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+            color: #e0e0e0;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('assets/icons/SJR.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 30%;
+            opacity: 0.3;
+            z-index: 0;
+        }
+        
+        /* ========== 导航栏样式 ========== */
+        /* LOGO容器 - 固定在左上角 */
+        .logo-container {
+            position: fixed;
+            left: 3rem;
+            top: 1rem;
+            z-index: 1001;
+        }
+        
+        /* LOGO文字样式 */
+        .logo {
+            font-size: 1.7rem;
+            font-weight: bold;
+            color: #e0e0e0;
+        }
+        
+        /* 主导航栏 - 固定在顶部 */
+        .main-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: rgba(0, 0, 0, 0.95);
+            padding: 0 3rem;
+            box-sizing: border-box;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.522);
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin: 0;
+            padding: 0 1rem;
+        }
+        
+        /* 导航链接基础样式 */
+        .main-nav a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            padding: 0;
+            display: inline-block;
+            font-family: 'Arial', 'Helvetica', sans-serif;
+        }
+        
+        /* 导航链接悬停效果 */
+        .main-nav a:hover {
+            color: #ffffff;
+            transform: scale(1.03);
+            text-shadow: 0 0 8px rgba(255,255,255,0.3);
+        }
+        
+        /* ========== 内容区域样式 ========== */
+        /* 主要内容面板 */
+        .bio-panel {
+            position: relative;
+            z-index: 2;
+            background-color: rgba(255, 255, 255, 0);
+            max-width: 1200px;
+            margin: 100px auto;
+            padding: 60px;
+            text-align: center;
+        }
+        
+        /* 联系方式容器 */
+        .bio-contact {
+            margin: 40px auto 0;
+            max-width: 600px;
+            text-align: left;
+            padding-left: 300px;
+        }
+        
+        /* 单个联系方式项 */
+        .bio-contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 15px 0;
+            font-size: 1.6rem;
+            letter-spacing: 0.5px;
+        }
+        
+        /* 联系方式图标 */
+        .bio-contact-icon-1{
+            width: 24px;
+            height: 24px;
+            margin-right: 15px;
+        }
+        .bio-contact-icon-2{
+            width: 28px;
+            height: 28px;
+            margin-right: 15px;
+        }
+        /* 主标题样式 */
+        .bio-panel h1 {
+            font-size: 3.6rem;
+            margin-bottom: 20px;
+            text-align: left;
+            padding-left:290px;
+        }
+        
+        /* 副标题样式 */
+        .bio-panel h2 {
+            font-size: 2.8rem;
+            margin-bottom: 40px;
+            font-weight: normal;
+            text-align: left;
+            padding-left: 290px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #000000;
+            color: #aaa;
+            position: relative;
+            z-index: 2;
+            margin-top: auto; /* 自动填充剩余空间 */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <span class="logo">ROnG's</span>
+        </div>
+        <nav class="main-nav">
+            <div class="nav-box">
+                <ul class="nav-links">
+                    <li><a href="index.html">RonG's Works</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="bio-panel">
+        <h1>Hey!</h1>
+        <h2>What about Working Together!</h2>
+        <div class="bio-contact">
+            <div class="bio-contact-item">
+                <img src="assets/icons/email.png" alt="Email" class="bio-contact-icon-1">
+                <span>ssjr55@qq.com</span>
+            </div>
+            <div class="bio-contact-item">
+                <img src="assets/icons/telephone.png" alt="Phone" class="bio-contact-icon-2">
+                <span>+86 13994232290</span>
+            </div>
+        </div>
+    </div>
+    <footer style="position: fixed; bottom: 0; width: 100%; background: rgba(0, 0, 0, 0.9); padding: 20px; text-align: center;">
+        <p>© 2025 ROnG's Portfolio</p>
+    </footer>
+</body>
+</html>
