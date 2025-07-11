@@ -255,23 +255,7 @@
      <footer>
         <p>© 2025 ROnG's Portfolio</p>
     </footer>
-  });
-  
-  // 视频播放结束时自动重置按钮状态
-  video.addEventListener('ended', function() {
-    playButton.checked = false;
-  });
-  // 鼠标移动时显示按钮，不移动时隐藏
-  let mouseMoveTimer;
-  const container = document.querySelector('.container');
-  
-  document.addEventListener('mousemove', () => {
-    container.style.opacity = '1';
-    clearTimeout(mouseMoveTimer);
-    mouseMoveTimer = setTimeout(() => {
-      container.style.opacity = '0';
-    }, 1000); // 2秒无操作后隐藏
-  });
+
 </script>
   <script>
     
