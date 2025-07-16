@@ -4,11 +4,8 @@
     <!-- 基础元数据 -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R0nG's Portfolio</title>
     <link rel="icon" href="assets/icons/favicon.png" type="image/png">
-    <meta name="description" content="这是Rong的多媒体设计作品集，展现数字艺术、交互、动画与游戏设计的前沿探索。">
-    <meta name="keywords" content="多媒体, 设计, 交互, 游戏, 动画,平面设计，装置艺术，作品集">
-    <meta name="author" content="Rong">
-    <title>ROnG's Portfolio</title>
     <style>
         /* ========== 全局样式 ========== */
         body {
@@ -313,8 +310,8 @@
 <body>
     <header>
         <div class="logo-container">
-            <span class="logo">ROnG's</span>
-        </div>
+    <a href="index.html" class="logo">ROnG's</a>
+</div>
         <nav class="main-nav">
             <div class="nav-box">
                 <ul class="nav-links">
@@ -334,6 +331,12 @@
                 </div>
                 <h3>Disinformation Overload</h3>
             </div>
+            <div class="project-item" data-project="project2">
+                <div class="project-thumbnail" style="display: flex; justify-content: center; align-items: center; height: 150px;">
+                    <img src="assets/img/projectDetail.png" alt="Project 2 Logo" style="max-width: 100%; max-height: 100%; padding: 5%;">
+                </div>
+                <h3>Webpage Design</h3>
+            </div>
             
         </aside>
         <main class="project-content">
@@ -346,7 +349,13 @@
             <div class="project-detail" id="project1">
                 <div class="text-container" style="margin-top: 20px;">
                     <h2>Disinformation Overload</h2>
-                    <p>This is an immersive visual interactive experience</p>
+                    <p>This is an Immersive Visual Interactive Experience</p>
+                </div>
+            </div>
+            <div class="project-detail" id="project2">
+                <div class="text-container" style="margin-top: 20px;">
+                    <h2>Webpage Design</h2>
+                    <p>This is a Webpage Design for Personal Portfolio</p>
                 </div>
             </div>
             
@@ -399,9 +408,17 @@
                 const activeDetail = document.getElementById(projectId);
                 activeDetail.classList.add('active');
                 
-                // 仅为项目1添加背景图片
+                // 设置项目背景图片
                 if(projectId === 'project1') {
-                    activeDetail.style.background = 'url(assets/img/Train - frame at 0m5s.png) center/cover no-repeat fixed';
+                    activeDetail.style.background = 'url(assets/img/Train - frame at 0m5s.png) center/auto 100% no-repeat fixed';
+                    // 设置项目1跳转链接地址
+                    const projectLink = document.querySelector('.project-link-icon');
+                    if(projectLink) projectLink.href = 'project_Disinfomation_Overload.html';
+                } else if(projectId === 'project2') {
+                    // 设置右下角跳转链接地址
+                    const projectLink = document.querySelector('.project-link-icon'); // 修正选择器为实际存在的class 'project-link-icon'
+                    if(projectLink) projectLink.href = 'project_webPageDesign.html';
+                    activeDetail.style.background = 'url(assets/img/about.png) top/100% auto no-repeat fixed'; // 背景图顶部贴合容器顶部
                 }
             });
         });
